@@ -3,7 +3,6 @@ import OpenWeatherAPIKey from "./apis.js";
 const token = OpenWeatherAPIKey();
 window.onload = function () {
     const savedLocation = JSON.parse(localStorage.getItem('savedLocation'));
-    console.log(savedLocation)
     if(!savedLocation)
     {
         displayWeather('New York');
@@ -32,7 +31,7 @@ const displayWeather = async (city) => {
 
     // Fill current weather
     currentWeather.innerHTML = `<p class="weatherHeading">Today's weather: </p><p class="temp">${data.main.temp.toFixed(0)}° F</p><img class="wIcons" src = "http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="${data.weather[0].description}"><p>${data.weather[0].description}</p><p>Low: ${data.main.temp_min.toFixed(0)}°</p><p>High: ${data.main.temp_max.toFixed(0)}°</p><p>Wind: ${data.wind.speed.toFixed(0)} mph</p>`
-console.log(data)
+
     //Fill 5 day Forecast
     fiveDayFetch(data);
     setCity(data);
