@@ -1,0 +1,299 @@
+
+$font-stack: 'Open Sans Condensed', sans-serif;
+$button-hovercolor: gray;
+$locatebutton-color: rgba(197, 192, 192, 0.918);
+$defaultcity-button-color: #c9c5c5;
+
+@mixin mq($size)
+{
+    @media only screen and (min-width: $size)
+    {
+        @content;
+    }
+}
+
+@mixin mh($size) {
+    @media only screen and (min-height: $size)
+    {
+        @content
+    }
+    }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+html,body{
+    font-size: 16px;
+    font-family: $font-stack;
+    color: white;
+    width: 100%;
+    min-height: 100%;
+    @include mq(320px)
+    {
+        font-size: 12px;
+        h2,h1,label
+        {
+            font-size: 12px;
+        }
+        .container-fluid
+        {
+
+            font-size: 12px;
+            margin: 10px 30px
+        }
+        #setDefaultCity
+        {
+            font-size: 10px;
+        }
+    }
+    @include mq(576px)
+    {
+        
+        h2,h1,label
+        {
+            font-size: 14px;
+        }
+        #setDefaultCity
+        {
+            font-size: 12px;
+        }
+        .container-fluid{
+
+            font-size: 14px;
+            margin: 10px 30px;
+        }
+    }    
+    @include mq(768px)
+    {
+        .container-fluid
+        {
+
+            font-size: 16px;
+            margin: 20px 40px
+        }
+    }
+    @include mq(992px)
+    {
+        font-size: 18px;
+        h2,h1,label
+        {
+            font-size: 18px;
+        }
+        .container-fluid
+        {
+            font-size: 18px;
+
+        }
+    }
+    @include mq(1024px)
+    {
+        h2,h1,label
+        {
+            font-size: 22px;
+        }
+        .container-fluid{
+
+        font-size: 20px;
+
+    }
+}
+}
+
+html
+{
+    padding-top: 30px;
+    padding-bottom: 5px;
+}
+html .container-fluid,
+body .container-fluid {
+    max-width: 80%;
+    font-size: 14px;
+    margin: auto;
+    height: 100%;
+}
+body
+{
+
+    background-image: linear-gradient(rgb(68, 201, 241),rgba(197, 192, 192, 0.918));   
+
+}
+
+.citySearch
+{
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    input {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+input{
+    font-size: 1.25rem;
+    background: none;
+    border: none;
+    display: flex;
+    color: #e4b373;
+    outline: none;
+    width: 100%;
+    text-align: center;
+}
+label{
+    font-size: 25px;
+    font-family: $font-stack;
+    margin-bottom: 10px;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100%;
+    opacity: 0.8;
+}
+.currentWeather
+{
+    display: table;
+    width: 50%;
+    table-layout: fixed;
+    border-spacing: 10px;
+    div
+    {
+        display: table-cell;
+    }
+    background-color:#75c8e1;
+    h2,p,img{
+        margin: auto;
+        opacity: 1;
+    }
+    margin: auto;
+    border-radius: 30px;
+
+    color: black;
+}
+
+.wIcons
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.currentWeather:hover
+{
+h2,p.temp,p.weatherHeading{
+    font-size: 1.5rem;
+}
+    border: 2px solid gray;
+    box-shadow: 4px 2px 5px #e4b373;
+}
+
+
+.location
+{
+    text-align: center;
+}
+.citySearch
+{
+    text-align: center;
+}
+
+#citySearchButton,#locateButton{
+    margin: 20px;
+    padding: 10px;
+    display: flexbox;
+    font-size: 15px;
+    max-height: 50px;
+    width: 90%;
+    text-align: center;
+
+}
+#setDefaultCity
+{
+display: flexbox;
+margin: 10px;
+font-size: 15px;
+padding: 1px;
+max-height: 50px;
+text-align: center;
+}
+
+.button{
+min-width: 48px;
+min-height: 48px;
+border-radius: 10px;
+outline: none;
+background: none;
+color: gray;
+font-weight: bold;
+padding: 12px 30px;
+}
+.button:hover{  
+    cursor: pointer;
+}
+.button:hover,.button:focus
+{
+    filter: brightness(-5%);
+    border: 2px solid black;
+    box-shadow: 4px 2px 5px #e4b373;
+    
+}
+
+.container-fluid
+{
+
+    display: flexbox;
+    background: none;
+    border: 2px solid rgba(197, 192, 192, 0.918);
+    box-shadow: 2px 2px 4px 4px #f1c2c2;
+    border-radius: 10px;
+
+}
+
+
+h1,h2,p{
+    text-align: center;
+    margin: auto;
+    opacity: 0.8;
+    color: black;
+}
+
+h1{
+    padding: 10px;
+    color: #ffffff;
+}
+h2
+{
+
+    font-weight: bold;
+    color: black;
+}
+
+
+.fiveDayForecast
+{
+display: table;
+width: 100%;
+table-layout: fixed;
+border-spacing: 10px;
+img{
+    width: 50%;
+}
+div
+{
+    display: table-cell;
+    background-color: #75c8e1;
+    border-radius: 12px;
+    padding-bottom: 2px;
+    color: black;
+}
+div:hover
+{
+    p.days,p.temp,p{
+    font-size: 1.25rem;
+    }
+    border: 2px solid gray;
+    box-shadow: 4px 2px 5px #e4b373;
+}
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="A simple weather app">
+    <meta name="keywords" content="Weather, app, openweatherAPI, HTML, CSS, Javascript">
+    <meta name="author" content="Moiz Zhara">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeathApp: A web weather app!</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./dist/css/style.min.css"/>
+    <script type ="module" src="./js/main.js"></script>
+</head>
+<body>
+    <main><h1>WeathApp: A web weather app</h1>
+        <div class = "container-fluid">
+            
+            <section class = "citySearch">
+                <label for="cityEntry">Enter a city below to search for it's weather. For example, New York.</label>
+                <input id = "cityEntry" aria-label = "Enter a city to search for in this field" type="text" size="40" autocomplete="off"  tabindex="0" /><hr>
+                <button id = "citySearchButton" type = "submit" class = "button searchButton" title="Search for a city" value="submit" aria-label="Button to search for a city's weather." tabindex="0">Search</button>
+                <button id = "locateButton" class = "button" title="Locate Me" aria-label="Retrieve weather for your current location." tabindex="0">Locate Me</button>
+        </section>
+        <section class = "currentWeather">
+            <div class = "location">
+                <h2 class= "cityName"></h2>
+            <button id = "setDefaultCity" class = "button" title="Set as default city" aria-label="Set the current searched city as a default city" tabindex="0">Set as default city</button>
+            </div>
+            <div id = "currentWeather">
+            </div>
+        </section>
+            <section class = "forecast">
+                <p class = "weatherHeading"> <h2>Extended 5 Day Forecast</h2>
+                    <div class = "fiveDayForecast">
+                        <div id = "day1"></div>
+                        <div id = "day2"></div>
+                        <div id = "day3"></div>
+                        <div id = "day4"></div>
+                        <div id = "day5"></div>
+                    </div>
+                </section>   
+            </div>
+
+    
+    </main>
+</body>
+
+</html>
