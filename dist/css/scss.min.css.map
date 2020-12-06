@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../../node_modules/rfs/scss.scss"
+    ],
+    "names": [],
+    "file": "scss.min.css"
+}
