@@ -333,35 +333,7 @@ $defaultcity-button-color: #c9c5c5;
     }
     }
 
-    @mixin backlight($x, $y, $spread, $size, $colorA, $colorB, $duration) {
-        &:after {
-          position: absolute;
-          content: "";
-          top: $y;
-          left: $x;
-          right: 0;
-          z-index: -1;
-          height: 100%;
-          width: 100%;
-          margin: 0 auto;
-          transform: scale($size);
-          -webkit-filter: blur($spread);
-          -moz-filter: blur($spread);
-          -ms-filter: blur($spread);
-          filter: blur($spread);
-          background: linear-gradient(270deg, $colorA, $colorB);
-          background-size: 200% 200%;
-          animation: animateGlow $duration ease infinite;
-          
-          @keyframes animateGlow {
-            0%{background-position:0% 50%}
-            50%{background-position:100% 50%}
-            100%{background-position:0% 50%}
-          }
-        }
-      }
-
-    body
+body
 {
     @include rfs(30px);
     background-image: linear-gradient(rgb(68, 201, 241),rgba(197, 192, 192, 0.918));   
@@ -468,24 +440,52 @@ body .container-fluid {
 .citySearch
 {
     margin-bottom: 1rem;
+    margin: auto;
     padding: 0.75rem;
+    position: relative;
     input {
-        display: flex;
+        display: block;
         justify-content: space-between;
     }
 }
 
 input{
-    @include rfs(20); 
+
     background: none;
-    border: none;
-    display: flex;
+    border: 1px solid;
+    display: block;
     color: #e4b373;
     outline: none;
-    width: 100%;
-    height: 100%;
+    margin: auto;
+    width: 70%;
+    height: 50px;
     text-align: center;
+    justify-content: space-between;
+    font-size: larger;
 }
+
+
+.citySearch i {
+        position: absolute;
+        width: 1px;
+        height: 80%;
+        background-color: gray;
+        left: 5px;
+        top: 10%;
+        animation-name: blink;
+        animation-duration: 800ms;
+        animation-iteration-count: infinite;
+}
+
+.citySearch input:focus + i {
+	display: none;
+}
+
+@keyframes blink {
+	from { opacity: 1; }
+	to { opacity: 0; }
+}
+    
 label{
     @include rfs(20); 
     font-family: $font-stack;
