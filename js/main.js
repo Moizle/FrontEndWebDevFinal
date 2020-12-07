@@ -84,7 +84,7 @@ const cityName = document.getElementById("cityEntry").value;
 document.getElementById("cityEntry").addEventListener("keyup", (event) =>
 {
     event.preventDefault();
-    if (event.keyCode === 'Enter')
+    if (event.key === 'Enter')
     {
         input.click();
     }
